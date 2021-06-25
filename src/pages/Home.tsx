@@ -2,7 +2,7 @@ import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
 import { useHistory } from 'react-router-dom';
-import { Button } from '../components/Button';
+import { Button } from '../components/Button/index';
 import { useAuth } from '../hooks/useAuth';
 import '../styles/auth.scss'
 import { FormEvent } from 'react';
@@ -36,6 +36,9 @@ export function Home(){
         if (!roomRef.exists()){
             alert('Room does not exist.');
             return;
+        }
+        if (roomRef.val().endedAt){
+            alert('Room already closed.')
         }
 
         history.push(`/rooms/${roomCode}`);

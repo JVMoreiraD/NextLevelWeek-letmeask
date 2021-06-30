@@ -14,7 +14,7 @@
                   ".write": "auth != null && !root.child('/rooms/' + $roomId + '/endedAt').exists() && (!data.exists() || data.child('author/id').val() == auth.uid)",
               "likes": {
                 ".read": true,
-                ".write": "auth != null",  
+                ".write": "auth != null" 
               }
             }
         }
